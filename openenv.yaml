@@ -1,0 +1,5 @@
+name: email-support-env
+description: AI agent learns to respond to customer emails
+action_space: text
+observation_space: text
+reward_range: [0.0, 1.0]
