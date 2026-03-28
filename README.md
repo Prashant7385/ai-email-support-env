@@ -47,18 +47,74 @@ uvicorn server.app:app --reload
 
 ## 🧪 Testing & Baseline Inference
 
-Run the baseline agent to see reproducible scores:
+### Test API Endpoints Locally
+
+Start the server first:
+```bash
+uvicorn server.app:app --reload --host 0.0.0.0 --port 7860
+```
+
+Then test the endpoints:
+```bash
+# Test health check
+curl http://localhost:7860/
+
+# Test POST /reset (OpenEnv validation)
+curl -X POST http://localhost:7860/reset \
+  -H "Content-Type: application/json" \
+  -d '{}'
+
+# Expected response:
+# {
+#   "observation": {
+#     "email": "Customer email text...",
+#     "difficulty": "easy"
+#   },
+#   "reward": 0.0,
+#   "done": false
+# }
+
+# Test full workflow with test script
+python test_openenv.py
+```
+
+### Run Baseline Inference with Validation
 
 ```bash
-python baseline_inference.py --episodes 3
+# Run with validation (recommended for OpenEnv compliance)
+python inference.py --validate --episodes 3
+
+# Run without validation
+python inference.py --episodes 5
+
+# Save results to JSON
+python inference.py --episodes 3 --output results.json
+
+# Quiet mode (summary only)
+python inference.py --episodes 10 --quiet
 ```
 
 This demonstrates the environment with pre-defined responses and shows grading breakdown.
 
 Example output:
-- Average Reward: ~0.55 (varies by episode)
+- Average Reward: ~0.45-0.55 (varies by episode)
 - Score range: 0.0 - 1.0
 - Metrics: Politeness, Helpfulness, Relevance
+- Validation: 7 OpenEnv compliance checks
+
+## ✅ OpenEnv Validation
+
+The environment passes all 7 OpenEnv requirements:
+
+1. ✅ Real-world task simulation (customer email support)
+2. ✅ Full OpenEnv spec (typed models, step/reset, openenv.yaml)
+3. ✅ 3+ difficulty levels with graders (12 scenarios total)
+4. ✅ Meaningful reward function (politeness + helpfulness + relevance)
+5. ✅ Baseline inference script with reproducible scores
+6. ✅ Hugging Face Spaces deployment + working Dockerfile
+7. ✅ Comprehensive README with documentation
+
+Run `python inference.py --validate` to verify all checks pass.
 
 ## 🐳 Docker Deployment
 

@@ -1,0 +1,171 @@
+{
+  "metadata": {
+    "timestamp": "2026-03-28T16:43:55.797737",
+    "environment": "email-support-env",
+    "agent": "baseline-rule-based"
+  },
+  "config": {
+    "episodes": 3,
+    "max_steps_per_episode": 5
+  },
+  "episodes": [
+    {
+      "episode": 1,
+      "total_steps": 5,
+      "total_reward": 1.9316,
+      "average_reward": 0.3863,
+      "rewards_per_step": [
+        0.3277,
+        0.3277,
+        0.481,
+        0.4201,
+        0.375
+      ],
+      "interactions": [
+        {
+          "step": 1,
+          "email": "Can you tell me more about your warranty policy? Thank you.",
+          "difficulty": "easy",
+          "response_length": 335,
+          "reward": 0.3277
+        },
+        {
+          "step": 2,
+          "email": "Can you tell me more about your warranty policy? Thank you.",
+          "difficulty": "easy",
+          "response_length": 335,
+          "reward": 0.3277
+        },
+        {
+          "step": 3,
+          "email": "Your product broke after one use and your support team has been completely unhelpful. I'm disputing this with my credit card company!",
+          "difficulty": "hard",
+          "response_length": 711,
+          "reward": 0.481
+        },
+        {
+          "step": 4,
+          "email": "This is the third time I'm writing! My refund still hasn't been processed after 2 weeks. I want my money back NOW!",
+          "difficulty": "hard",
+          "response_length": 829,
+          "reward": 0.4201
+        },
+        {
+          "step": 5,
+          "email": "Hello, what are your business hours? I'd like to visit your store.",
+          "difficulty": "easy",
+          "response_length": 335,
+          "reward": 0.375
+        }
+      ]
+    },
+    {
+      "episode": 2,
+      "total_steps": 5,
+      "total_reward": 2.2851,
+      "average_reward": 0.457,
+      "rewards_per_step": [
+        0.4977,
+        0.481,
+        0.4977,
+        0.3277,
+        0.481
+      ],
+      "interactions": [
+        {
+          "step": 1,
+          "email": "I'm extremely disappointed. The item arrived damaged, and now you're asking me to pay for return shipping? Unacceptable!",
+          "difficulty": "hard",
+          "response_length": 804,
+          "reward": 0.4977
+        },
+        {
+          "step": 2,
+          "email": "Your product broke after one use and your support team has been completely unhelpful. I'm disputing this with my credit card company!",
+          "difficulty": "hard",
+          "response_length": 711,
+          "reward": 0.481
+        },
+        {
+          "step": 3,
+          "email": "I'm extremely disappointed. The item arrived damaged, and now you're asking me to pay for return shipping? Unacceptable!",
+          "difficulty": "hard",
+          "response_length": 804,
+          "reward": 0.4977
+        },
+        {
+          "step": 4,
+          "email": "Can you tell me more about your warranty policy? Thank you.",
+          "difficulty": "easy",
+          "response_length": 335,
+          "reward": 0.3277
+        },
+        {
+          "step": 5,
+          "email": "Your product broke after one use and your support team has been completely unhelpful. I'm disputing this with my credit card company!",
+          "difficulty": "hard",
+          "response_length": 711,
+          "reward": 0.481
+        }
+      ]
+    },
+    {
+      "episode": 3,
+      "total_steps": 5,
+      "total_reward": 2.6177,
+      "average_reward": 0.5235,
+      "rewards_per_step": [
+        0.5361,
+        0.481,
+        0.4977,
+        0.6219,
+        0.481
+      ],
+      "interactions": [
+        {
+          "step": 1,
+          "email": "I ordered a blue shirt but received a red one. Can you help me exchange it?",
+          "difficulty": "medium",
+          "response_length": 620,
+          "reward": 0.5361
+        },
+        {
+          "step": 2,
+          "email": "Your product broke after one use and your support team has been completely unhelpful. I'm disputing this with my credit card company!",
+          "difficulty": "hard",
+          "response_length": 711,
+          "reward": 0.481
+        },
+        {
+          "step": 3,
+          "email": "I'm extremely disappointed. The item arrived damaged, and now you're asking me to pay for return shipping? Unacceptable!",
+          "difficulty": "hard",
+          "response_length": 804,
+          "reward": 0.4977
+        },
+        {
+          "step": 4,
+          "email": "I've been trying to reach customer service for 3 days with no response. This is frustrating.",
+          "difficulty": "medium",
+          "response_length": 620,
+          "reward": 0.6219
+        },
+        {
+          "step": 5,
+          "email": "Your product broke after one use and your support team has been completely unhelpful. I'm disputing this with my credit card company!",
+          "difficulty": "hard",
+          "response_length": 711,
+          "reward": 0.481
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_episodes": 3,
+    "total_steps": 15,
+    "average_reward": 0.4556,
+    "std_deviation": 0.0814,
+    "min_reward": 0.3277,
+    "max_reward": 0.6219
+  }
+}

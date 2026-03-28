@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from pydantic import BaseModel
 from typing import Optional
 import uuid
@@ -33,9 +33,10 @@ async def root():
     }
 
 @app.post("/reset", response_model=StepResult)
-async def reset_environment(request: ResetRequest = None):
+async def reset_environment(request: Request = None):
     """
     Start a new episode and get the first email
+    Accepts POST request with or without body
     """
     # Create new environment instance
     episode_id = str(uuid.uuid4())

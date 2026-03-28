@@ -3,3 +3,19 @@ description: AI agent learns to respond to customer emails
 action_space: text
 observation_space: text
 reward_range: [0.0, 1.0]
+entry_point: server.environment:EmailEnvironment
+inference_script: inference.py
+max_steps: 5
+difficulty_levels:
+  - easy
+  - medium
+  - hard
+evaluation:
+  metrics:
+    - politeness
+    - helpfulness
+    - relevance
+  weights:
+    politeness: 0.3
+    helpfulness: 0.3
+    relevance: 0.4

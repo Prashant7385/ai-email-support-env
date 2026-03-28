@@ -1,0 +1,61 @@
+# Files to upload to GitHub and Hugging Face
+
+## Essential Files (Upload These):
+
+### Root Level:
+1. Dockerfile
+2. README.md
+3. inference.py
+4. baseline_inference.py
+5. client.py
+6. models.py
+7. openenv.yaml
+8. .gitignore
+
+### Server Folder:
+9. server/app.py
+10. server/environment.py
+11. server/grader.py
+12. server/__init__.py
+
+## DO NOT Upload:
+- venv/ folder
+- __pycache__/ folders
+- *.pyc files
+- results.json
+- *.log files
+- upload.py
+- upload_to_hf.py
+
+## GitHub Repository:
+https://github.com/Prashant7385/ai-email-support-env
+
+## Upload Instructions:
+
+### Option 1: Web Interface (Recommended)
+1. Go to https://github.com/Prashant7385/ai-email-support-env
+2. Click "uploading an existing file"
+3. Drag all 12 files listed above
+4. Commit message: "Initial commit: Complete OpenEnv email environment"
+5. Click "Commit changes"
+
+### Option 2: Git Command Line (If Git is installed)
+```bash
+cd c:\OPENenv\email_env
+git init
+git add .
+git commit -m "Initial commit: Complete OpenEnv email environment"
+git remote add origin https://github.com/Prashant7385/ai-email-support-env.git
+git branch -M main
+git push -u origin main
+```
+
+## Project Status:
+✅ All OpenEnv requirements met
+✅ inference.py with validation created
+✅ openenv.yaml properly configured
+✅ 12 email scenarios (easy/medium/hard)
+✅ Multi-criteria reward function
+✅ Baseline agent with reproducible scores (~0.45-0.55 avg)
+✅ Docker configuration ready
+✅ Hugging Face Space deployed
